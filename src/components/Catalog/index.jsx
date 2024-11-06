@@ -4,12 +4,13 @@
 
 
 import React, { useContext } from 'react'
-import { Context } from '../../model/Context'
+import { FilmContext } from '../../contexts'
 import { Card } from './Card'
+import { Selection } from './Selection'
 
 
 export const Catalog = (props) => {
-  const { films, videoId, select } = useContext(Context)
+  const { films, videoId, select } = useContext(FilmContext)
   // console.log("films:", films);
   // [ {
   //   _id: ObjectId('672b044ba7c9b091dfa7a01a'),
@@ -40,8 +41,11 @@ export const Catalog = (props) => {
     />))
 
   return (
-    <ul id="catalog">
-      {filmList}
-    </ul>
+    <>
+      <ul id="catalog">
+        {filmList}
+      </ul>
+      <Selection />
+    </>
   )
 }

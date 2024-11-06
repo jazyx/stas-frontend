@@ -36,7 +36,7 @@ export const Card = (props) => {
     select
   } = props
   const flags = languages.map(({ lang }) => {
-    const src = `flags/${lang}.svg`
+    const src = `flags/${lang}.png`
     return (
       <li
         key={lang}

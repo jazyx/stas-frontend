@@ -15,15 +15,16 @@ import { reducer, initialState } from './Reducer.jsx'
 const BACKEND = import.meta.env.VITE_BACKEND
 
 
-export const Context = createContext()
+export const FilmContext = createContext()
 
 
-export const Provider = ({ children }) => {
+export const FilmProvider = ({ children }) => {
   const [ state, dispatch ] = useReducer(reducer, initialState)
   const {
     films,
     subtitle,
     transcription,
+    title,
     videoId,
     width,
     height,
@@ -59,11 +60,13 @@ export const Provider = ({ children }) => {
 
 
   return (
-    <Context.Provider
+    <FilmContext.Provider
       value ={{
         films,
         subtitle,
         transcription,
+
+        title,
         videoId,
         width,
         height,
@@ -72,6 +75,6 @@ export const Provider = ({ children }) => {
       }}
     >
       {children}
-    </Context.Provider>
+    </FilmContext.Provider>
   )
 }

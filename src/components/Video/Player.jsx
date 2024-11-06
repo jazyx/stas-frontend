@@ -5,7 +5,7 @@
 
 import React, { useContext } from 'react'
 import YouTube from 'react-youtube'
-import { Context } from '../../model/Context'
+import { FilmContext } from '../../contexts'
 
 
 export const Player = () => {
@@ -13,7 +13,7 @@ export const Player = () => {
     width = "560",
     height = "315",
     videoId = "BH5Y9A2MHQA",
-  } = useContext(Context)
+  } = useContext(FilmContext)
 
 
   // HACK which should prevent postMessage from being blocked

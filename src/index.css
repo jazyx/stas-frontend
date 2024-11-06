@@ -66,6 +66,12 @@ ul.menu {
 
   li {
     margin: 0 2px;
+
+    img {
+      width: 48px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
   }
 }
 
@@ -101,5 +107,11 @@ ul.menu {
   li.selected {
     border-style: inset;
     background-color: #000;
+  }
+}
+
+#selection {
+  i {
+    font-weight: bold;
   }
 }

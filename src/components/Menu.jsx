@@ -5,11 +5,11 @@
 
 import React, { useEffect, useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Context } from '../model/Context'
+import { FilmContext } from '../contexts'
 
 
-export const Menu = (props) => {
-  const { videoId } = useContext(Context)
+export const Menu = () => {
+  const { videoId } = useContext(FilmContext)
   const location = useLocation()
   // {
   //   pathname: "/watch",

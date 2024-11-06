@@ -1,0 +1,18 @@
+{
+  "ru": {
+    "name": "Русский",
+    "flag": "flags/ru.png"
+  },
+  "en": {
+    "name": "English",
+    "flag": "flags/en-GB.png"
+  },
+  "fr": {
+    "name": "Français",
+    "flag": "flags/fr-FR.png"
+  },
+  "es": {
+    "name": "Español",
+    "flag": "flags/es_ES.png"
+  }
+}

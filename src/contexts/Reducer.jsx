@@ -13,8 +13,9 @@
 
 const initialState = {
   films: [],
-  subtitle: "en_US",
-  transcription: "en_US",
+  subtitle: "en-US",
+  transcription: "en-US",
+  title: "",
   videoId: "",
   width: 560,
   height: 315,
@@ -44,9 +45,9 @@ function setFilms( state, films ) {
 
 function selectFilm( state, videoId ) {
   const film = state.films.find( film => film.videoId === videoId)
-  const { width, height } = film
+  const { width, height, title } = film
   const aspect = width / height
-  return { ...state, videoId, width, height, aspect }
+  return { ...state, title, videoId, width, height, aspect }
 }
 
 

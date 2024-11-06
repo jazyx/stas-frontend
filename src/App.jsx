@@ -9,7 +9,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import { Provider } from './model/Context'
+import { Provider } from './contexts/'
 import { Frame } from './components/Frame'
 import { Video } from './components/Video'
 import { Catalog } from './components/Catalog'

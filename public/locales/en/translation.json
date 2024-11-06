@@ -1,0 +1,20 @@
+{
+  "__endonym__": "English",
+  "error": {
+    "404": "404 Not Found",
+    "": "Something went wrong"
+  },
+  "cancel": "Cancel",
+
+  "watch": {
+    "film": "Watch <i>{{title}}</i> with ",
+    "with": {
+      "no": "no subtitles or transcription.",
+      "one": "{{language}} for both subtitles and transcription.",
+      "two": "{{first}} for subtitles and {{second}} for transcription.",
+      "use": "{{language}} for "
+    },
+    "subtitles": "subtitles",
+    "transcription": "transcription"
+  }
+}
