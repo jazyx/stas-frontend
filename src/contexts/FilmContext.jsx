@@ -23,7 +23,7 @@ export const FilmProvider = ({ children }) => {
   const {
     films,
     subtitles,
-    transcription,
+    transcript,
     videoId,
     film
   } = state  
@@ -69,7 +69,7 @@ export const FilmProvider = ({ children }) => {
       value ={{
         films,
         subtitles,
-        transcription,
+        transcript,
 
         videoId,
         film,

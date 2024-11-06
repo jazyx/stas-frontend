@@ -14,7 +14,7 @@
 const initialState = {
   films: [],
   subtitles: "en-US",
-  transcription: "en-US",
+  transcript: "en-US",
   videoId: "",
   film: {}
 }

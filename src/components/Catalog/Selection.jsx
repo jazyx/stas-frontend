@@ -14,7 +14,7 @@ export const Selection = (props) => {
   const {
     film, // may be {}
     subtitles,
-    transcription,
+    transcript,
     setLanguage
   } = useContext(FilmContext)
 
@@ -39,9 +39,9 @@ export const Selection = (props) => {
   }
 
   const tProps = {
-    field: "transcription",
+    field: "transcript",
     languages,
-    value: transcription,
+    value: transcript,
     select
   }
 
