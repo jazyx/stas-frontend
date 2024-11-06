@@ -11,7 +11,8 @@ export const Player = (props) => {
   const {
     width = "560",
     height = "315",
-    videoId = "LhaWOPh-zo0"
+    videoId = "BH5Y9A2MHQA",
+    temple = "LhaWOPh-zo0"
   } = props
 
 
