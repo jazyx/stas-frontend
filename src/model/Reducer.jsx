@@ -28,15 +28,25 @@ const reducer = (state, action) => {
     case "SET_FILMS":
       return setFilms(state, payload)
 
+    case "SELECT_FILM":
+      return selectFilm(state, payload)
+
     default:
       return {...state}
   }
 }
 
 
-
 function setFilms( state, films ) {
   return { ...state, films }
+}
+
+
+function selectFilm( state, videoId ) {
+  const film = state.films.find( film => film.videoId === videoId)
+  const { width, height } = film
+  const aspect = width / height
+  return { ...state, videoId, width, height, aspect }
 }
 
 

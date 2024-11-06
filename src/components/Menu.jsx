@@ -3,11 +3,13 @@
  */
 
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { Context } from '../model/Context'
 
 
 export const Menu = (props) => {
+  const { videoId } = useContext(Context)
   const location = useLocation()
   // {
   //   pathname: "/watch",
@@ -31,7 +33,11 @@ export const Menu = (props) => {
 
     linkList = links.map(({ to, text }) => {
       const isSelected = to === pathname
-      const className = isSelected ? "selected" : null
+      const disabled = to === "/watch" && !videoId
+        ? "disabled"
+        : null
+      const className = isSelected ? "selected" : disabled
+
       return (
         <li
           key={to}

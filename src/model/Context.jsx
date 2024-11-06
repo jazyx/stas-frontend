@@ -38,6 +38,15 @@ export const Provider = ({ children }) => {
     })
   }
 
+
+  const select = payload => {
+    dispatch({
+      type: "SELECT_FILM",
+      payload
+    })
+  }
+
+
   const getRandomSample = () => {
     const url= BACKEND+"sample"
     
@@ -46,8 +55,8 @@ export const Provider = ({ children }) => {
       .then(setFilms)
       .catch(error => console.log("error:", error))
   }
-
   useEffect(getRandomSample, [])
+
 
   return (
     <Context.Provider
@@ -58,7 +67,8 @@ export const Provider = ({ children }) => {
         videoId,
         width,
         height,
-        aspect
+        aspect,
+        select
       }}
     >
       {children}

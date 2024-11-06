@@ -26,18 +26,39 @@ export const Card = (props) => {
   //   __v: 0
   // }
 
-  const { title, year, thumbnail, languages } = props
+  const {
+    title,
+    year,
+    thumbnail,
+    languages,
+    $selected,
+    videoId,
+    select
+  } = props
   const flags = languages.map(({ lang }) => {
     const src = `flags/${lang}.svg`
     return (
-      <li key={lang}>
+      <li
+        key={lang}
+      >
         <img src={src} alt={lang}/>
       </li>
     )
   })
 
+  const className = $selected ? "selected" : null
+
+
+  const selectFilm = () => {
+    select(videoId)
+  }
+
+
   return (
-    <div>
+    <div
+      className={className}
+      onClick={selectFilm}
+    >
       <h1>{title}</h1>
       <h3>{year}</h3>
       <img src={thumbnail} alt={title}/>

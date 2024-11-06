@@ -36,9 +36,16 @@ body {
   margin: 0;
 
   & > div {
-    border: 1px solid #fff;
+    border: 1px solid var(--light);
     text-align: center;
     padding: 0 1em;
+    opacity: 0.8;
+
+    &.selected {
+      opacity: 1;
+      border: 1px inset #fff;
+      background-color: #000;
+    }
 
     h1, h3 {
       margin: 0;
@@ -76,6 +83,11 @@ ul.menu {
     flex: 1;
     text-align: center;
     border: 1px outset #666;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 
   a {

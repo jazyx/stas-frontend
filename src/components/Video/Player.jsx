@@ -3,17 +3,17 @@
  */
 
 
-import React from 'react'
+import React, { useContext } from 'react'
 import YouTube from 'react-youtube'
+import { Context } from '../../model/Context'
 
 
-export const Player = (props) => {
+export const Player = () => {
   const {
     width = "560",
     height = "315",
     videoId = "BH5Y9A2MHQA",
-    temple = "LhaWOPh-zo0"
-  } = props
+  } = useContext(Context)
 
 
   // HACK which should prevent postMessage from being blocked
