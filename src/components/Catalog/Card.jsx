@@ -41,7 +41,7 @@ export const Card = (props) => {
       <h1>{title}</h1>
       <h3>{year}</h3>
       <img src={thumbnail} alt={title}/>
-      <ul>{flags}</ul>
-      </div>
+      <ul className="menu">{flags}</ul>
+    </div>
   )
 }

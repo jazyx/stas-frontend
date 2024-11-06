@@ -16,19 +16,31 @@ export const Player = (props) => {
   } = props
 
 
+  // HACK which should prevent postMessage from being blocked
+  if (!window.YTConfig) {
+    window.YTConfig = {
+      host: 'https://www.youtube.com'
+    }
+  } else {
+    window.YTConfig.host = 'https://www.youtube.com'
+  }
+
+
   const options = {
     height,
     width,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 0
+      autoplay: 0,
     }
   }
+
 
   const onReady = ({ target }) => {
     console.log("Ready to play...")
     target.pauseVideo()
   }
+
 
   return (
     <YouTube
