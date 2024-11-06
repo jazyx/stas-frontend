@@ -51,10 +51,7 @@ export const I18nProvider = ({ children }) => {
   const [ languages, setLanguages ] = useState([])
   const [ language, setLanguage ] = useState(
     navigator.language // ru
-  )
-
-  console.log("language:", language);
-  
+  )  
 
 
   const changeLanguage = language => {

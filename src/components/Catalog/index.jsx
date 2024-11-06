@@ -9,8 +9,8 @@ import { Card } from './Card'
 import { Selection } from './Selection'
 
 
-export const Catalog = (props) => {
-  const { films, videoId, select } = useContext(FilmContext)
+export const Catalog = () => {
+  const { films, videoId, selectFilm } = useContext(FilmContext)
   // console.log("films:", films);
   // [ {
   //   _id: ObjectId('672b044ba7c9b091dfa7a01a'),
@@ -30,15 +30,16 @@ export const Catalog = (props) => {
   //   ],
   //   __v: 0
   //   $selected: <boolean>
-  // }]
+  // }]  
   
   const filmList = films.map( film => (
     <Card
       key={film.videoId}
       $selected={videoId === film.videoId}
-      select={select}
+      selectFilm={selectFilm}
       {...film}
-    />))
+    />)
+  )
 
   return (
     <>

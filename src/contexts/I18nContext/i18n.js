@@ -6,13 +6,12 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import Backend from 'i18next-http-backend'
 const deployed = location.host === "lexogram.github.io"
-const loadPath = (deployed)
-  ? `locales/{{lng}}/{{ns}}.json`
-  : `locales/{{lng}}/{{ns}}.json`
-  // : `stv/locales/{{lng}}/{{ns}}.json`
-// const loadPath = `locales/{{lng}}/{{ns}}.json`
+// const loadPath = (deployed)
+//   ? `locales/{{lng}}/{{ns}}.json`
+//   : `stv/locales/{{lng}}/{{ns}}.json`
+const loadPath = `locales/{{lng}}/{{ns}}.json`
 const options = {
-  debug: true,
+  debug: false,
   fallbackLng: ["en"],
   interpolation: {
     escapeValue: false

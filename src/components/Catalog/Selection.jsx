@@ -4,35 +4,62 @@
 
 
 import React, { useContext } from 'react'
-import { FilmContext, I18nContext } from '../../contexts'
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
+import { FilmContext } from '../../contexts'
+import { Language } from './Language'
 
 
 export const Selection = (props) => {
   const { t } = useTranslation()
-
   const {
-    title,
-    subtitle,
-    transcription
+    film, // may be {}
+    subtitles,
+    transcription,
+    setLanguage
   } = useContext(FilmContext)
 
+  const { title, year, vo, languages } = film  
 
   if (!title) {
     return
   }
 
+  const blurb = languages.find(({ lang }) => lang === vo ).blurb
+
+  const select = ({ target }) => {
+    const { name, value } = target
+    setLanguage(name, value)
+  }
+
+  const sProps = {
+    field: "subtitles",
+    languages,
+    value: subtitles,
+    select
+  }
+
+  const tProps = {
+    field: "transcription",
+    languages,
+    value: transcription,
+    select
+  }
 
   return (
-    <p id="selection">
-      <Trans
-        i18nKey="watch.film"
-        values={{ title }}
-        // defaults="Watch <i>{{title}}</i> with "
-      />
-      <Trans
-        i18nKey="watch.with.no"
-      />
-    </p>
+    <div id="selection">
+      <h1>{title} <span>({year})</span></h1>
+      <p>{blurb}</p>
+
+      <div className="languages">
+        <Language {...sProps}/>
+        <Language {...tProps}/>
+      </div>
+
+      <div className="watch">
+        <button className="primary">
+          {t("watch")}
+        </button>
+      </div>
+    </div>
   )
 }

@@ -22,13 +22,10 @@ export const FilmProvider = ({ children }) => {
   const [ state, dispatch ] = useReducer(reducer, initialState)
   const {
     films,
-    subtitle,
+    subtitles,
     transcription,
-    title,
     videoId,
-    width,
-    height,
-    aspect
+    film
   } = state  
 
 
@@ -40,10 +37,18 @@ export const FilmProvider = ({ children }) => {
   }
 
 
-  const select = payload => {
+  const selectFilm = payload => {
     dispatch({
       type: "SELECT_FILM",
       payload
+    })
+  }
+
+
+  const setLanguage = (field, code) => {
+    dispatch({
+      type: "SET_LANGUAGE",
+      payload: { field, code }
     })
   }
 
@@ -63,15 +68,14 @@ export const FilmProvider = ({ children }) => {
     <FilmContext.Provider
       value ={{
         films,
-        subtitle,
+        subtitles,
         transcription,
 
-        title,
         videoId,
-        width,
-        height,
-        aspect,
-        select
+        film,
+
+        selectFilm,
+        setLanguage
       }}
     >
       {children}

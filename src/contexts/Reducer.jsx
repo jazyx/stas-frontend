@@ -13,13 +13,10 @@
 
 const initialState = {
   films: [],
-  subtitle: "en-US",
+  subtitles: "en-US",
   transcription: "en-US",
-  title: "",
   videoId: "",
-  width: 560,
-  height: 315,
-  aspect: 1.777777777777
+  film: {}
 }
 
 
@@ -31,6 +28,9 @@ const reducer = (state, action) => {
 
     case "SELECT_FILM":
       return selectFilm(state, payload)
+
+    case "SET_LANGUAGE":
+      return setLanguage(state, payload)
 
     default:
       return {...state}
@@ -45,9 +45,18 @@ function setFilms( state, films ) {
 
 function selectFilm( state, videoId ) {
   const film = state.films.find( film => film.videoId === videoId)
-  const { width, height, title } = film
-  const aspect = width / height
-  return { ...state, title, videoId, width, height, aspect }
+  const { width, height } = film
+  film.aspect = width / height
+  return {
+    ...state,
+    videoId,
+    film
+  }
+}
+
+
+function setLanguage(state, { field, code }) {
+  return { ...state, [field]: code }
 }
 
 

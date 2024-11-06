@@ -6,15 +6,9 @@
   },
   "cancel": "Cancel",
 
-  "watch": {
-    "film": "Watch <i>{{title}}</i> with ",
-    "with": {
-      "no": "no subtitles or transcription.",
-      "one": "{{language}} for both subtitles and transcription.",
-      "two": "{{first}} for subtitles and {{second}} for transcription.",
-      "use": "{{language}} for "
-    },
-    "subtitles": "subtitles",
-    "transcription": "transcription"
-  }
+  "subtitles": "Subtitles:",
+  "transcription": "Transcription:",
+  "off": "Off",
+
+  "watch": "Watch"
 }

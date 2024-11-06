@@ -13,7 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 
   --light: #ddd;
+  --mid: #888;
   --dark: #222;
+  --gap: 0.5em;
+
+  --primary: #060;
+  --primary-border: #393;
+  --primary-active: #030;
+
+  color: var(--light);
+  background-color: var(--dark);
 }
 
 body {
@@ -28,6 +37,68 @@ body {
 #root {
   position: relative;
 }
+
+/* BUTTONS / BUTTONS / BUTTONS / BUTTONS / BUTTONS / BUTTONS */
+
+div.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.buttons button {
+  flex: 1
+}
+
+div.buttons .primary {
+  margin-left: 0.5em;
+  flex: 2
+}
+
+
+button,
+.button {
+  border: 1px outset var(--mid);
+  border-radius: var(--gap);
+  padding: var(--gap);
+}
+
+button:not(:disabled),
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  color: #fff;
+}
+
+button:hover:active,
+.button:hover:active {
+  border-style: inset;
+  background-color: #000;
+}
+
+button.pressed,
+.button.pressed {
+  color: #fff;
+  border-style: inset;
+  background-color: #000;
+}
+
+button.primary,
+.button.primary {
+  background-color: var(--primary);
+  border-color: var(--primary-border);
+}
+
+button.primary:active:hover,
+.button.primary:active:hover {
+  background-color: var(--primary-active);
+}
+
+
+/* CUSTOM / CUSTOM / CUSTOM / CUSTOM / CUSTOM / CUSTOM / CUSTOM */
+
 
 #catalog {
   display: flex;
@@ -69,7 +140,6 @@ ul.menu {
 
     img {
       width: 48px;
-      opacity: 0.5;
       cursor: pointer;
     }
   }
@@ -111,7 +181,41 @@ ul.menu {
 }
 
 #selection {
-  i {
-    font-weight: bold;
+  max-width: 480px;
+  border: 1px inset #444;
+  background-color: #222;
+  padding: 6px;
+
+  h1 {
+    text-align: center;
+  }
+
+  span {
+    font-size: 0.75em;
+  }
+
+  p {
+    height: 5em;
+    overflow-y: auto;
+  }
+
+  div.languages {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      padding-right: 0.25em;
+    }
+  }
+
+  div.watch {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+    button {
+      font-size: 1.25em;
+      padding: 0.4em 2em;
+    }
   }
 }
