@@ -1,0 +1,14 @@
+{
+  "__endonym__": "English",
+  "error": {
+    "404": "404 Not Found",
+    "": "Something went wrong"
+  },
+  "cancel": "Cancel",
+
+  "subtitles": "Subtitles:",
+  "transcript": "Transcript:",
+  "off": "Off",
+
+  "watch": "Watch"
+}
