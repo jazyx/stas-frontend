@@ -1,28 +1,28 @@
 {
   "en": {
     "name": "American English",
-    "flag": "stv/flags/en-US.png",
+    "flag": "stas-frontend/flags/en-US.png",
     "emoji": "🇺🇸"
   },
   "es": {
     "name": "Español",
-    "flag": "stv/flags/es-ES.png",
+    "flag": "stas-frontend/flags/es-ES.png",
     "emoji": "🇪🇸"
   },
   "fr": {
     "name": "Français",
-    "flag": "stv/flags/fr-FR.png",
+    "flag": "stas-frontend/flags/fr-FR.png",
     "emoji": "🇫🇷"
   },
   
   "ru": {
     "name": "Русский",
-    "flag": "stv/flags/ru.png",
+    "flag": "stas-frontend/flags/ru.png",
     "emoji": "🇷🇺"
   },
   "kk": {
     "name": "Қазақ",
-    "flag": "stv/flags/kk.png",
+    "flag": "stas-frontend/flags/kk.png",
     "emoji": "🇰🇿"
   }
 }

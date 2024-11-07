@@ -12,7 +12,7 @@ import React, {
   useReducer
 } from 'react'
 import { reducer, initialState } from './Reducer.jsx'
-const BACKEND = import.meta.env.VITE_BACKEND
+const BACKEND = import.meta.env.VITE_BACKEND || "https://stas-backend.onrender.com/"
 
 
 export const FilmContext = createContext()
@@ -26,7 +26,7 @@ export const FilmProvider = ({ children }) => {
     transcript,
     videoId,
     film
-  } = state  
+  } = state
 
 
   const setFilms = payload => {
@@ -55,7 +55,9 @@ export const FilmProvider = ({ children }) => {
 
   const getRandomSample = () => {
     const url= BACKEND+"sample"
-    
+    console.log("getRandomSample from:", url)
+
+
     fetch(url)
       .then(response => response.json())
       .then(setFilms)

@@ -39,8 +39,8 @@ import i18n from './I18n'
 
 const deployed = location.host === "lexogram.github.io"
 const URL = (deployed)
-  ? `/stv/locales/languages.json`
-  : `/stv/locales/languages_dev.json`
+  ? `/stas-frontend/locales/languages.json`
+  : `/stas-frontend/locales/languages_dev.json`
 
 
 export const I18nContext = createContext({})
